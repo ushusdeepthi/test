@@ -51,7 +51,6 @@ class Dice {
     }
 
     calculateDiceValues() {
-     //   this.dice_values = new Array(7).fill(0);
 
         this.dice_values=this.dice.map(current_value => {
             return [current_value.value]++;
@@ -66,7 +65,7 @@ class Dice {
 
     show_dice_values() {
         for ( let i = 0; i <= 7; i++ ) {
-            console.log(i + ': ' this.dice_values[i]);
+            console.log((i+1) + ': '+ this.dice_values[i+1]);
         }
     }
 
