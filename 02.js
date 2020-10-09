@@ -16,9 +16,20 @@ Alla tecken som inte är a-z eller någon av ovanstående (t ex kommatecken, pun
 
 */
 
-function safe_string() {
+function safe_string(string) {
+    let x="";
+    for(let i=0;i<string.length;i++){
+        
+        if((string.charCodeAt(i)>65 && string.charCodeAt(i)<90)|| (string.charCodeAt(i)>97 && string.charCodeAt(i)<122)){
+            x+= string[i];
+        }
+        else {
+            x+= string.charCodeAt(i);}
+    }
+    return x;
+    }
 
-}
+
 
 console.log( safe_string( "<h1>Sjörövare, O'hoj</h1>" ) ); // Expected output: &lt;h1&gt;Sj&ouml;r&ouml;vare O&apos;hoj&lt;/h1&gt;
 

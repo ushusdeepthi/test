@@ -25,10 +25,10 @@ Antal tärningsvärden
 class Die {
     constructor() {
         this.value = this.getNewValue();
-        this.id = id;
+     //   this.id = id;
     }
 
-    throw() {
+    throws() {
         this.value = this.getNewValue();
     }
 
@@ -43,23 +43,24 @@ class Dice {
         this.dice_values = new Array(7).fill(0);
 
         for (let i = 0; i <= size; i++) {
-            this.dice.push(new Die("dice_" + (i + 1)));
+            this.dice.push(new Die());
         }
-
-        calculateDiceValues();
+        console.log(this.dice);
+       calculateDiceValues();
+       console.log(this.dice_values);
     }
 
     calculateDiceValues() {
-        this.dice_values = new Array(7).fill(0);
+     //   this.dice_values = new Array(7).fill(0);
 
-        this.dice.maps(current_value => {
-            this.dice_values[current_value.value]++;
+        this.dice_values=this.dice.map(current_value => {
+            return [current_value.value]++;
         })
     }
 
     show_dice() {
-        this.dice.map(current_value = > {
-            console.log(current_value.innerHTML);
+        this.dice.map(current_value => {
+            return current_value.value;
         })
     }
 
@@ -77,9 +78,9 @@ class Dice {
     }
 }
 
-let dice = new Dice();
+let dice = new Dice(4);
 
-for ( let i = 1; i > 5; i++ ) {
+for ( let i = 1; i < 5; i++ ) {
     dice.throw(); // Get new dice values
     console.log('Omgång ' + i);
     console.log('Tärningsvärden');
